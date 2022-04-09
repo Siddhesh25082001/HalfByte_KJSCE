@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <!-- This is the Head Section -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Title and Icon -->
+        <title>Connect</title>
+        <link rel="shortcut icon" href="/images/favicon_logo.jpg">
+
+        <!-- StyleSheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/room.css">
+        <link rel="stylesheet" href="./css/createRoom.css">
+        <link rel="stylesheet" href="./css/mode3.css">
+
+        <!-- Emojisonearea stylesheet -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
+
+        <!-- Bootstrap scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- Fontawesome icons -->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+        <!-- Link to the Socket.io cdn -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script> -->
+
+        <!-- Link to the Peer JS cdn -->
+        <!-- <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> -->
+
+        <!-- Scrpt for Required Room Details -->
+        <script>
+            const ROOM_ID = '<%= roomId %>'
+            const USER_FNAME = '<%= userFName %>'
+            const USER_LNAME = '<%= userLName %>'
+            const USER_EMAIL = '<%= userEmail %>'
+            const USER_PHONE = '<%= userPhone %>'
+            let USER_NAME = '<%= userName %>'
+        </script>
+
+        <style>
+            .form-control{
+                height: 15vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .titles:hover{
+                background-color: rgb(240, 233, 233);
+            }
+
+            #speak{
+                border: none;
+                background-color: aqua;
+                padding: 5px;
+                border-radius: 10px;
+                margin: 5px 0;
+            }
+
+            #close{
+                background-color: tomato;
+                border: none;
+                padding: 5px;
+                border-radius: 10px;
+                margin: 5px 0;
+            }
+
+           
+
+            .div-background-cursor{
+                width: 10px;
+                height: 15vh;
+                background: cyan;
+                position: absolute;
+                top: 0;
+                left: 0;
+                animation: myfirst 10s;
+            }
+
+            @keyframes myfirst {
+                0%   {background: cyan; left: 0%; top: 0px;}
+
+                1%   {background: cyan; left: 1%; top: 0px;}
+                2%   {background: cyan; left: 2%; top: 0px;}
+                3%   {background: cyan; left: 3%; top: 0px;}
+                4%   {background: cyan; left: 4%; top: 0px;}
+                5%   {background: cyan; left: 5%; top: 0px;}
+                6%   {background: cyan; left: 6%; top: 0px;}
+                7%   {background: cyan; left: 7%; top: 0px;}
+                8%   {background: cyan; left: 8%; top: 0px;}
+                9%   {background: cyan; left: 9%; top: 0px;}
+                10%   {background: cyan; left: 10%; top: 0px;}
+                
+                11%   {background: cyan; left: 11%; top: 0px;}
+                12%   {background: cyan; left: 12%; top: 0px;}
+                13%   {background: cyan; left: 13%; top: 0px;}
+                14%   {background: cyan; left: 14%; top: 0px;}
+                15%   {background: cyan; left: 15%; top: 0px;}
+                16%   {background: cyan; left: 16%; top: 0px;}
+                17%   {background: cyan; left: 17%; top: 0px;}
+                18%   {background: cyan; left: 18%; top: 0px;}
+                19%   {background: cyan; left: 19%; top: 0px;}
+                20%   {background: cyan; left: 20%; top: 0px;}
+
+                21%   {background: cyan; left: 21%; top: 0px;}
+                22%   {background: cyan; left: 22%; top: 0px;}
+                23%   {background: cyan; left: 23%; top: 0px;}
+                24%   {background: cyan; left: 24%; top: 0px;}
+                25%   {background: cyan; left: 25%; top: 0px;}
+                26%   {background: cyan; left: 26%; top: 0px;}
+                27%   {background: cyan; left: 27%; top: 0px;}
+                28%   {background: cyan; left: 28%; top: 0px;}
+                29%   {background: cyan; left: 29%; top: 0px;}
+                30%   {background: cyan; left: 30%; top: 0px;}
+               
+                31%   {background: cyan; left: 31%; top: 0px;}
+                32%   {background: cyan; left: 32%; top: 0px;}
+                33%   {background: cyan; left: 33%; top: 0px;}
+                34%   {background: cyan; left: 34%; top: 0px;}
+                35%   {background: cyan; left: 35%; top: 0px;}
+                36%   {background: cyan; left: 36%; top: 0px;}
+                37%   {background: cyan; left: 37%; top: 0px;}
+                38%   {background: cyan; left: 38%; top: 0px;}
+                39%   {background: cyan; left: 39%; top: 0px;}
+                40%   {background: cyan; left: 40%; top: 0px;}
+
+                41%   {background: cyan; left: 41%; top: 0px;}
+                42%   {background: cyan; left: 42%; top: 0px;}
+                43%   {background: cyan; left: 43%; top: 0px;}
+                44%   {background: cyan; left: 44%; top: 0px;}
+                45%   {background: cyan; left: 45%; top: 0px;}
+                46%   {background: cyan; left: 46%; top: 0px;}
+                47%   {background: cyan; left: 47%; top: 0px;}
+                48%   {background: cyan; left: 48%; top: 0px;}
+                49%   {background: cyan; left: 49%; top: 0px;}
+                50%   {background: cyan; left: 50%; top: 0px;}
+
+                51%   {background: cyan; left: 51%; top: 0px;}
+                52%   {background: cyan; left: 52%; top: 0px;}
+                53%   {background: cyan; left: 53%; top: 0px;}
+                54%   {background: cyan; left: 54%; top: 0px;}
+                55%   {background: cyan; left: 55%; top: 0px;}
+                56%   {background: cyan; left: 56%; top: 0px;}
+                57%   {background: cyan; left: 57%; top: 0px;}
+                58%   {background: cyan; left: 58%; top: 0px;}
+                59%   {background: cyan; left: 59%; top: 0px;}
+                60%   {background: cyan; left: 60%; top: 0px;}
+
+                61%   {background: cyan; left: 61%; top: 0px;}
+                62%   {background: cyan; left: 62%; top: 0px;}
+                63%   {background: cyan; left: 63%; top: 0px;}
+                64%   {background: cyan; left: 64%; top: 0px;}
+                65%   {background: cyan; left: 65%; top: 0px;}
+                66%   {background: cyan; left: 66%; top: 0px;}
+                67%   {background: cyan; left: 67%; top: 0px;}
+                68%   {background: cyan; left: 68%; top: 0px;}
+                69%   {background: cyan; left: 69%; top: 0px;}
+                70%   {background: cyan; left: 70%; top: 0px;}
+
+                71%   {background: cyan; left: 71%; top: 0px;}
+                72%   {background: cyan; left: 72%; top: 0px;}
+                73%   {background: cyan; left: 73%; top: 0px;}
+                74%   {background: cyan; left: 74%; top: 0px;}
+                75%   {background: cyan; left: 75%; top: 0px;}
+                76%   {background: cyan; left: 76%; top: 0px;}
+                77%   {background: cyan; left: 77%; top: 0px;}
+                78%   {background: cyan; left: 78%; top: 0px;}
+                79%   {background: cyan; left: 79%; top: 0px;}
+                80%   {background: cyan; left: 80%; top: 0px;}
+
+                81%   {background: cyan; left: 81%; top: 0px;}
+                82%   {background: cyan; left: 82%; top: 0px;}
+                83%   {background: cyan; left: 83%; top: 0px;}
+                84%   {background: cyan; left: 84%; top: 0px;}
+                85%   {background: cyan; left: 85%; top: 0px;}
+                86%   {background: cyan; left: 86%; top: 0px;}
+                87%   {background: cyan; left: 87%; top: 0px;}
+                88%   {background: cyan; left: 88%; top: 0px;}
+                89%   {background: cyan; left: 89%; top: 0px;}
+                90%   {background: cyan; left: 90%; top: 0px;}
+
+                91%   {background: cyan; left: 91%; top: 0px;}
+                92%   {background: cyan; left: 92%; top: 0px;}
+                93%   {background: cyan; left: 93%; top: 0px;}
+                94%   {background: cyan; left: 94%; top: 0px;}
+                95%   {background: cyan; left: 95%; top: 0px;}
+                96%   {background: cyan; left: 96%; top: 0px;}
+                97%   {background: cyan; left: 97%; top: 0px;}
+                98%   {background: cyan; left: 98%; top: 0px;}
+                99%   {background: cyan; left: 99%; top: 0px;}
+                100%   {background: cyan; left: 100%; top: 0px;}
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <!-- Video Screen and Meeting Controls -->
+        <div class="row content">
+
+            <!-- Left Side - Big Buttons -->
+            <div class="col-4 big-btn-tray" id="left-tray">
+                <div class="big-btn-grid-container">
+                    
+                        
+                    <div class="big-btn gaze" id="yes-btn">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Yes</span>
+                    </div>
+
+                    <div class="big-btn gaze" id="speak-btn">
+                        <i class="fa-solid fa-volume-high"></i>
+                        <span>Speak</span>
+                    </div>
+
+                    <div class="big-btn gaze" id="words-btn">
+                        <i class="fa-solid fa-grip"></i>
+                        <span>Words</span>
+                    </div>
+
+                    <div class="big-btn gaze" id="alphabets-btn">
+                        <i class="fa-solid fa-font"></i>
+                        <span>Alphabets</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side - Video Conferencing -->
+            <div class="col-4 d-flex flex-column justify-content-between" style="max-height: 60vh;" id="main">
+    
+                <!-- Video Grid for Other Peers -->
+                <div id="video-grid-1" class="d-flex justify-content-center align-items-center flex-wrap"></div>
+    
+                <!-- Video Grid for Ourselves -->
+                <div id="video-grid-2"></div>
+        
+                <!-- Meeting Options -->    
+                <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+                    <div class="container">    
+                        <ul class="navbar-nav left">
+                            <li class="nav-item" id="audioOption" onclick="muteUnmute()" title="Audio">
+                                <i class="fas fa-microphone nav-link"></i>
+                            </li>
+                            <li class="nav-item" id="videoOption" onclick="playStop()" title="Video">
+                                <i class="fas fa-video nav-link"></i>
+                            </li>
+                            <li class="nav-item" onclick="whiteBoard()">
+                                <i class="far fa-edit nav-link"></i>
+                            </li>
+                            <li class="nav-item" id="screen-share" onclick="screenSharing()" title="Screen Share">
+                                <i class="fas fa-desktop nav-link"></i>
+                            </li>
+                        </ul>    
+                        <ul class="navbar-nav right">
+                            <li class="nav-item">
+                                <button class="nav-link btn btn-danger px-5 leave" onclick="leave()" title="Leave Meeting">
+                                <i class="fas fa-phone-alt"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>    
+                </nav> -->
+
+                <input type="text" class="sentence" id="user-sentence" name="" value="">
+
+            </div>
+
+            <!-- Right Side - Big Buttons -->
+            <div class="col-4 big-btn-tray" id="right-tray">
+
+                <div class="big-btn-grid-container">
+                    
+                        
+                    <div class="big-btn gaze" id="cancel-btn">
+                        <i class="fa-solid fa-delete-left"></i>
+                        <span>Cancel</span>
+                    </div>
+
+                    <div class="big-btn gaze" id="no-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>No</span>
+                    </div>
+
+                    <div class="big-btn gaze" id="emojis-btn">
+                        <i class="fa-solid fa-face-grin-stars"></i>
+                        <span>Emojis</span>
+                    </div>
+
+                    <div class="big-btn gaze" id="greetings-btn">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <span>Greetings</span>
+                    </div>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+
+        
+        <div class="col-12 word-tray" id="bottom-tray">
+  
+                <div class="word-tiles-grid-container">
+
+    
+                </div>
+
+        </div>
+
+
+        <!-- EmojioneArea script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- Link to JS Files -->
+        <!-- <script src="./js/createRoom.js"></script>
+        <script src="./js/room-3.js"></script> -->
+        <script src="./js/words-2.js"></script>
+        <script src="./js/mode-3.js"></script>
+        <!-- <script src="./js/webgazer.js"></script>
+        <script src="./js/gazeTracking.js"></script> -->
+
+
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,94 @@
+<!-- This is 'info.ejs' File of Connect - The Info Room Page -->
+
+<%- include('partials/layout') -%> 
+
+    <%- include('partials/header') -%>
+
+    <div class="room info-title">
+        <h2><span><i class="fas fa-user"></i></span> Tell Us about Yourself</h2>
+        <p>This information will help others to recognize you and vice versa</p>
+    </div>
+
+    <section class="info">
+        <div class="part-1">
+            <img src="/images/image9.png" alt="">
+        </div>
+
+        <div class="part-2">
+            <div class="form">
+                
+                <form action="/info/<%= roomId %>" method="POST">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="fname">First Name <span>*</span> </label>
+                                <input type="text" class="form-control" id="fname" name="fname" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="lname">Last Name <span>*</span> </label>
+                                <input type="text" class="form-control" id="lname" name="lname" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="email">Email <span>*</span> </label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="phone">Contact No <span>*</span> </label>
+                                <input type="tel" class="form-control" id="phone" name="phone"  required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="nname">Nickname (for chatting) <span>*</span> </label>
+                                <input type="text" class="form-control" id="nname" name="nname" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="mode">Mode of Room<span>*</span> </label>
+                                <select id="mode-dropdown" name="mode" class="form-select form-control" aria-label=".form-select-sm example">
+                                    <option value="0" selected>Select a Room Mode</option>
+                                    <option value="1">Mode 1</option>
+                                    <option value="2">Mode 2</option>
+                                    <option value="3">Mode 3</option>
+                                    <option value="4">Mode 4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <button type="submit" id="submit-info" class="btn btn-success">Submit</button>
+                            <input type="reset" value="Cancel" class="btn btn-danger">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- autofills the form  -->
+    <script>
+        document.querySelector('input[name="fname"]').value = "dummy"
+        document.querySelector('input[name="lname"]').value = "dummy"
+        document.querySelector('input[name="email"]').value = "dummy@gmail.com"
+        document.querySelector('input[name="phone"]').value = "12345"
+        document.querySelector('input[name="nname"]').value = "dumdum"
+    </script>
+
+    <%- include('partials/cards') -%>
+
+    <%- include('partials/footer') -%>

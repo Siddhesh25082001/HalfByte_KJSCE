@@ -1,0 +1,86 @@
+<!-- This is 'home.ejs' File of Connect - The Home Page -->
+
+<%- include('partials/layout') -%> 
+
+    <%- include('partials/header') -%>
+
+    <section id="banner">
+
+        <div id="first" class="odd">
+            <div class="left">
+                <h2>Life’s better when we <span>Connect</span> together</h2>
+                <div id="mobile">
+                    <video src="/images/Video.webm" loop autoplay muted></video>
+                </div>
+                <p>
+                    Now bring colleagues, family and friends together to call, chat, and make plans — all in one place.
+                    <br><br>
+                    Invite anyone with a room id to join your meeting. Increase your productivity and work together in real time with your favorite Office apps, screen sharing and meeting chats.
+                </p>
+                <div class="options">
+                    <a href="/createRoom"><button type="button" id="createRoom" class="btn btn-success" style="margin: 10px 0">Create Room</button></a>
+                    <a href="/joinRoom"><button type="button" id="joinRoom" class="btn btn-primary">Join Room</button></a>
+                </div>
+            </div>
+            <div class="right">
+                <video src="/images/Video.webm" loop autoplay muted></video>
+            </div>
+        </div>
+
+        <div class="title">
+            <p>Explore our modes for Disable people</p>
+            <a href="#second"><i class="fas fa-caret-down"></i></a>
+
+        </div>
+
+        <div id="second" class="even">
+            <div class="left">
+                <img src="/images/highfive_mode1.jpg" alt="">
+            </div>
+            <div class="right">
+                <h2>Mode 1 - Awaz</h2>
+                <p>
+                    Voice based assistance support to the individuals. Voice based commands by the individuals to perform actions over the web application.
+                </p>
+            </div>
+        </div>
+
+        <div id="third" class="odd">
+            <div class="left">
+                <h2>Mode 2 - </h2>
+                <p>
+                    Pictorial clickable tiles based interface for people helping to form words / sentences that to be communicated to the recipient via text to speech
+            </div>
+            <div class="right">
+                <img src="/images/image3.jpg" alt="">
+            </div>
+        </div>
+
+        <div id="fourth" class="even">
+            <div class="left">
+                <img src="/images/image4.jpg" alt="">
+            </div>
+            <div class="right">
+                <h2>Mode 3 - </h2>
+                <p>
+                    Eye gaze based interaction of the individual over the website. User's gaze location tracking by webcam coupled with cursor positioning as an add-on
+                </p>
+            </div>
+        </div>
+
+        <div id="third" class="odd">
+            <div class="left">
+                <h2>Mode 4 - </h2>
+                <p>
+                    Trained models intercepting the feed of the user from webcam and converting Sign-language to human spoken langugaes
+            </div>
+            <div class="right">
+                <img src="/images/highfive_siz.jpg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+    <%- include('partials/command-modal') -%>
+
+    <%- include('partials/footer') -%>

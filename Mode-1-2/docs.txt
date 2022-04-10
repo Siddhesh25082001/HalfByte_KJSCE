@@ -1,0 +1,2 @@
+Heroku Git URL: https://git.heroku.com/highfive-app.git
+Heroku Deploy URL: https://highfive-app.herokuapp.com/

@@ -1,0 +1,190 @@
+:root {
+    --yes-light : #b1ffcd;
+    --no-light : #ffc4c4;
+    --greeting-light : #c2ebff;
+    --pronoun-light : #fec0db;
+    --time-light : #ffffff;
+    --action-light : #a1e7ab;
+    --action-dark : #01a019;
+    --adjective-light : #fb95ea;
+    --adjective-dark : #af0092;
+    --question-light : #7ab7ff;
+    --question-dark : #005bc4;
+    --emoji-light : #ffe8a7;
+    --emoji-dark : #dfa300;
+    --alphabet-light : rgb(255, 162, 118);
+    --alphabet-dark : rgb(189, 60, 0);
+    --number-light : rgb(113, 255, 231);
+    --number-dark : rgb(0, 145, 120);
+}
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              BIG BUTTON STYLE                              */
+/* -------------------------------------------------------------------------- */
+
+.big-btn-tray {
+    max-height: 60vh;
+    padding: 10px;
+    height: 100%;
+}
+
+.big-btn-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-gap: 10px;
+    grid-auto-rows: minmax(190px, auto);
+    grid-auto-columns: minmax((150px, auto));
+}
+
+.big-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 26vh;
+
+    padding: 0.25rem!important;
+    margin: 0.5rem!important;
+    border-radius: 0.25rem!important;
+
+    box-shadow: rgb(0 0 0 / 15%) 0px 0.5rem 1rem !important;
+
+    user-select: none;
+}
+
+.big-btn i{
+    font-size: 65px;
+}
+
+.big-btn span{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.big-btn:hover {
+    background-color: rgb(240, 233, 233);
+}
+
+.big-btn.active {
+    border: 10px solid green;
+}
+
+.big-btn .loading{
+    background-color: rgb(121, 205, 98);
+    opacity: 0.3;
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  WORD-TRAY                                 */
+/* -------------------------------------------------------------------------- */
+
+.word-tray {
+    display: flex;
+    height: 35%;
+
+    max-height: 40vh;
+    overflow: scroll;
+    background-color: #eaeaea;
+
+    padding-top:20px;
+}
+
+.word-tiles-grid-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax((150px, auto));
+    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.word-tile{
+    height: 10vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+    font-weight: bold;
+
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin: 10px;
+    font-size: 25px;
+    text-transform: capitalize;
+
+    user-select: none;
+}
+
+.word-tile i{
+    font-size: 45px;
+}
+
+.word-tile.active {
+    background-color: #ffda92;
+}
+
+/* --------------------------------- cursor --------------------------------- */
+
+.cursor {
+    position: absolute;
+    left: 0;
+    z-index: 999;
+    background-color: rgb(255, 115, 0);
+    height: 100%;
+    width: 20px;
+}
+
+/* -------------------------- sentence input field -------------------------- */
+
+.sentence {
+    background-color: rgb(209, 209, 209);
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0;
+
+    width: 100%;
+
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.sentence.reading {
+    background-color: rgb(0, 92, 0);
+    color: rgb(255, 255, 255);
+}
+

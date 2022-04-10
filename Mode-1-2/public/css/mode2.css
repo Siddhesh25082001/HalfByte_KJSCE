@@ -1,0 +1,334 @@
+:root {
+    --yes-light : #b1ffcd;
+    --no-light : #ffc4c4;
+    --greeting-light : #c2ebff;
+    --pronoun-light : #fec0db;
+    --time-light : #ffffff;
+    --action-light : #a1e7ab;
+    --action-dark : #01a019;
+    --adjective-light : #fb95ea;
+    --adjective-dark : #af0092;
+    --question-light : #7ab7ff;
+    --question-dark : #005bc4;
+    --emoji-light : #ffe8a7;
+    --emoji-dark : #dfa300;
+    --alphabet-light : rgb(255, 162, 118);
+    --alphabet-dark : rgb(189, 60, 0);
+    --number-light : rgb(113, 255, 231);
+    --number-dark : rgb(0, 145, 120);
+}
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.content {
+    height: 100%;
+}
+
+.tiles-layout {
+    height: 100%;
+    padding : 0 10px;
+    background-color: #f4f3f1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------------ sentence ------------------------------ */
+
+.sentence {
+    background-color: rgb(231, 231, 231);
+    height: 15vh;
+    display: flex;
+    margin: 10px 0;
+
+    border: 3px solid black;
+}
+
+.sentence .sentence-tiles {
+    width: 80%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    grid-auto-rows: minmax(100%, 100%);
+    grid-auto-columns: minmax((35px, auto));
+
+    gap: 10px;
+    padding: 10px;
+
+    
+}
+
+.sentence-tiles .word-tile{
+    pointer-events: none;
+}
+
+
+.sentence .buttons {
+    width: 20%;
+    background-color: rgb(156, 156, 156);
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.speak-btn, .clear-btn {
+    width: 45%;
+    font-size: 40px;
+
+    background-color: white;
+    border: 3px solid rgb(0, 0, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speak-btn{
+    color: rgb(22, 76, 255);
+    
+}
+
+.speak-btn:hover {
+    color : white;
+    background-color : rgb(22, 76, 255);
+}
+
+.clear-btn{
+    color: rgb(252, 67, 67);
+}
+
+.clear-btn:hover {
+    color : white;
+    background-color: rgb(252, 67, 67);
+}
+
+/* -------------------------------- word tray ------------------------------- */
+
+.word-tray {
+    height: 65vh;
+    overflow-y: scroll;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax((35px, auto));
+
+    gap: 25px;
+    padding: 10px;
+}
+
+.word-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    user-select: none;
+}
+
+.word-tile::after {
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+    z-index: -1;
+  }
+
+.word-tile:hover {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+    z-index: 10;
+
+    opacity: 1;
+	transition: 0.3s;
+}
+
+.word-tile:hover::after {
+	opacity: 1;
+}
+
+.word-tile > span {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* ------------------------------ category-tray ----------------------------- */
+
+.category-tray {
+    background-color: rgb(165, 165, 165);
+    height: 20vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    padding: 20px;
+
+    padding-bottom: 0;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.category-tile{
+    height: 100%;
+    min-width: 130px;
+    background-color: rgb(235, 235, 235);
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 12px;
+    padding-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    user-select: none;
+}
+
+.category-tile i {
+    font-size: 3em;
+}
+
+.category-tile span{
+    font-weight: bolder;
+    margin-top: 5px;
+}
+
+
+/* --------------------------- category bg colors --------------------------- */
+
+.word-tile.yes {
+    background-color: var(--yes-light);
+}
+
+.word-tile.no {
+    background-color: var(--no-light);
+}
+
+.word-tile.greeting {
+    background-color: var(--greeting-light);
+}
+
+.word-tile.pronoun {
+    background-color: var(--pronoun-light);
+}
+
+.word-tile.time {
+    background-color: var(--time-light);
+}
+
+.word-tile.question {
+    background-color: var(--question-light);
+}
+
+.word-tile.action {
+    background-color: var(--action-light);
+}
+
+.word-tile.adjective {
+    background-color: var(--adjective-light);
+}
+
+.word-tile.emoji {
+    background-color: var(--emoji-light);
+}
+
+.word-tile.alphabet {
+    background-color: var(--alphabet-light);
+}
+
+.word-tile.number {
+    background-color: var(--number-light);
+}
+
+/* -------------------------- category tile colors -------------------------- */
+
+.category-tile#question{
+    color: var(--question-dark);
+
+}
+
+.category-tile#action{
+    color: var(--action-dark);
+}
+
+
+.category-tile#adjective{
+    color: var(--adjective-dark);
+}
+
+.category-tile#emoji {
+    color: var(--emoji-dark);
+}
+
+.category-tile#alphabet {
+    color: var(--alphabet-dark);
+}
+
+.category-tile#number {
+    color: var(--number-dark);
+    
+}
+
+
+/* ------------------------- active category colors ------------------------- */
+
+
+.category-tile#question.active{
+    color: white;
+    background-color: var(--question-dark);
+
+}
+
+.category-tile#action.active{
+    color: white;
+    background-color: var(--action-dark);
+}
+
+
+.category-tile#adjective.active {
+    color: white;
+    background-color: var(--adjective-dark);
+}
+
+.category-tile#emoji.active {
+    color: white;
+    background-color: var(--emoji-dark);
+}
+
+.category-tile#alphabet.active {
+    color: white;
+    background-color: var(--alphabet-dark);
+}
+
+.category-tile#number.active {
+    color: white;
+    background-color: var(--number-dark);
+}

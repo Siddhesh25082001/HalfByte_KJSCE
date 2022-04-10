@@ -1,10 +1,5 @@
-# HalfByte_KJSCE
-
-> ## Idea Presentation
-
-![image](https://user-images.githubusercontent.com/67231450/162562031-ab21cfc8-4045-43e5-8e44-f4693e3bd83a.png)
-
-![image](https://user-images.githubusercontent.com/67231450/162562039-97f596a9-a1a9-4e82-9d18-f0cc94b969c3.png)
+# HalfByte_KJSCE-Hackathon-Project
+---
 
 ![image](https://user-images.githubusercontent.com/67231450/162562054-df1dfeb5-10ee-4df2-a8eb-76644ecd91c6.png)
 
@@ -15,3 +10,7 @@
 ![image](https://user-images.githubusercontent.com/67231450/162562078-ff9c4c3b-8191-438f-84cc-c903301b6562.png)
 
 ![image](https://user-images.githubusercontent.com/67231450/162562088-95b592fc-d170-49f5-8744-6be39fdc82a9.png)
+
+---
+
+The Web-app Modes (Mode-1: Awaz and Mode-2: Sparsh) have also been deployed on the Heroku Server and can be accessed by the following link: https://aatma-nirbhar.herokuapp.com/
